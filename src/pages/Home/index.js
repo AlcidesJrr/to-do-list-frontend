@@ -1,4 +1,5 @@
-import React from 'react'
+import './Styles.css';
+import React from 'react';
 import { FcAlarmClock } from "react-icons/fc";
 
 
