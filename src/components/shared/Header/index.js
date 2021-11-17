@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FcHome } from "react-icons/fc";
 import { FcTodoList } from "react-icons/fc";
+import logoalwhite from './Img/logoalwhite.png';
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <Link className="navbar-brand text-white " to="/">
-          To Do List
+          <img src={logoalwhite}  width="250" height="100" />
         </Link>
         <div className="nav-right">
         <div className="collapse navbar-collapse " id="navbarTogglerDemo03">

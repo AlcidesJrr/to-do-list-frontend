@@ -2,6 +2,9 @@
     border: rgb(73, 73, 233) 1px solid;
     border-radius: 1rem;
     width: auto;
-    
 }
 
+button {
+    background-color: transparent;
+    border: none;
+}

@@ -1,0 +1,19 @@
+.cadastro {
+    display: flex;
+    width: 400px;
+    border: rgb(197, 142, 133) 1px solid;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form-group input {
+    width: 330px;
+    font-size: 1rem;
+}
+
+.titulo-h1 {
+    text-align: center;
+    margin-top: 20px;
+}
