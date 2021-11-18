@@ -15,7 +15,7 @@ const List = () => {
   }
 
   return (
-    <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 mt-3">
+    <div className="row align-items-start row-cols-2 row-cols-lg-5 g-2 g-lg-3 mt-3  ">
       {lists.map((list) => (
         <Card data={list} key={list._id}/>
       ))}

@@ -6,6 +6,9 @@
     border-radius: 0.6rem;
     margin: auto;
     margin-top: 20px;
+    background-color:rgba(62, 62, 223, 0.473);
+    border: rgb(73, 73, 233) 1px solid;
+    box-shadow: 0 0 1rem #00000060;
 }
 
 .form-group input {
@@ -16,4 +19,15 @@
 .titulo-h1 {
     text-align: center;
     margin-top: 20px;
+}
+
+.success:hover {
+    color: rgb(4, 110, 61);
+    transform: scale(1.1);
+    font-weight: 600;
+}
+
+.back:hover {
+    color: rgb(4, 10, 99);
+    transform: scale(1.1);
 }

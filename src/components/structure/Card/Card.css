@@ -1,11 +1,37 @@
 .card-body {
-    border: rgb(73, 73, 233) 1px solid;
     border-radius: 0.8rem;
     width: auto;
     background-color:rgba(62, 62, 223, 0.473);
+    box-shadow: 0 0 0.2rem #00000060;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    margin: 12px 0 15px 0;
+    line-height: 1.3;
+}
+
+.Alta {
+    background-color: rgba(243, 123, 123, 0.932);
+}
+.Média {
+    background-color: rgba(255, 127, 80, 0.836);
+}
+.Baixa {
+    background-color: rgba(100, 148, 237, 0.856);
 }
 
 .linkk {
     text-decoration: none;
     color: inherit;
+}
+
+.linkk:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: scale(1.01);
+}
+
+.hg {
+    height: auto;
 }

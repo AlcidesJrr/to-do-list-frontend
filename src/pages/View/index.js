@@ -18,13 +18,13 @@ const View = () => {
     }, []);
 
     const { id } = useParams();
-    console.log(id);
     const getListById = async () => {
         const request = await Api.fetchGetById(id);
         const list = await request.json();
         setList(list);
     };
 
+   
     const meses = [
         'Jan',
         'Fev',
@@ -73,24 +73,40 @@ const View = () => {
     var date2 = new Date();
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  
+    var colorText ='';
+
+    const ColorText = () => {
+        if(diffDays > 15) {
+            colorText = 'text-dark'
+        } else {
+            colorText ='text-danger'
+        }
+    }
+    ColorText();
 
     return (
         <div>
             <div className="title-view">
                 <h2>CHECK? LIST! </h2>
             </div>
-            <div className="card-view ">
+            <div className={`card-view ${list.prioridade}`}>
                 <h5 className="card-title">
                     {list.titulo}
                     <div className="edit-del">
                         <Link
                             to={`/edit/${id}`}
                             type="button"
-                            className="btn  editar bg-transparent btn-sm"
+                            className="btn editar bg-transparent btn-sm"
+                            title ="Editar"
                         >
-                            <FiEdit size={20} />
+                            <FiEdit size={18} />
                         </Link>
-                        <button type="button" className="btn delete bg-transparent btn-sm">
+                        <button 
+                            type="button" 
+                            className="btn delete bg-transparent btn-sm"
+                            title = "Deletar"
+                            >
                             < ModalDelete />
                         </button>
                         <Link
@@ -100,7 +116,7 @@ const View = () => {
                             className="btn voltar bg-transparent btn-sm"
                         >
                             {' '}
-                            <IoIosReturnLeft size={20} />{' '}
+                            <IoIosReturnLeft size={23} />{' '}
                         </Link>
                     </div>
                 </h5>
@@ -108,7 +124,7 @@ const View = () => {
                 <div className="icons-view">
                     <span title="Prioridade">
                         <AiOutlineOrderedList size={35} />{' '}
-                        <span className="badge bg-transparent text-dark">
+                        <span className="badge bg-transparent text-dark ">
                             {list.prioridade}
                         </span>
                     </span>
@@ -136,7 +152,7 @@ const View = () => {
                     <h5 title="Prazo">
                         {' '}
                         Restam:
-                        <h2 className="badge bg-transparent text-dark">
+                        <h2 className={`badge bg-transparent ${colorText}`}>
                             {diffDays} dias
                         </h2>
                     </h5>

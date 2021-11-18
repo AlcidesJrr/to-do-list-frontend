@@ -3,6 +3,7 @@ import './Cadastro.css';
 import Api from '../../api/api';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { IoIosReturnLeft } from 'react-icons/io';
 
 
 
@@ -18,7 +19,7 @@ const Cadastro = () => {
         const prazo = evento.target.prazo.value;
 
         const list = {
-        titulo,
+        titulo: titulo.toUpperCase(),
         descricao,
         prioridade,
         status,
@@ -58,8 +59,8 @@ const Cadastro = () => {
                         <label htmlFor="prioridade">Prioridade: </label>
                         <select name="prioridade" className="form-select" >
                             <option value="nenhum" >Nenhum</option>
-                            <option value="Alto">Alto</option>
-                            <option value="Médio">Médio</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Média">Média</option>
                             <option value="Baixa">Baixa</option>
                         </select>
                 </div>
@@ -78,10 +79,15 @@ const Cadastro = () => {
                 </div>
              
                 <br></br>
-                <button type="submit" className="btn btn-primary">Enviar</button>
-                <Link to={`/`} type="button" className="btn btn-danger">
-                  Voltar
-                </Link>
+                <button type="submit" className="btn bg-transparent success ">Enviar</button>
+                <Link
+                        to={`/`}
+                        type="button"
+                        title="Voltar"
+                        className="btn bg-transparent back"
+                    >
+                        <IoIosReturnLeft size={40} />
+                    </Link>
             </form>
         </div>
         </>

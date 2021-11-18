@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { IoIosReturnLeft } from 'react-icons/io';
+import './../Cadastro/Cadastro.css'
 
 const Edit = () => {
     const [list, setList] = useState({});
@@ -22,9 +23,6 @@ const Edit = () => {
     const handleFieldsChange = evento => {
         const campos = { ...list };
         campos[evento.target.name] = evento.target.value;
-        campos[evento.target.descricao] = evento.target.value;
-        campos[evento.target.status] = evento.target.value;
-        campos[evento.target.prazo] = evento.target.value;
 
         setList(campos);
     };
@@ -42,7 +40,7 @@ const Edit = () => {
                             type="text"
                             value={list.titulo}
                             onChange={handleFieldsChange}
-                            name=" titulo"
+                            name="titulo"
                             className="form-control"
                             id="titulo"
                             aria-describedby="emailHelp"
@@ -73,8 +71,8 @@ const Edit = () => {
                             className="form-select"
                         >
                             <option value="nenhum">Nenhum</option>
-                            <option value="Alto">Alto</option>
-                            <option value="Médio">Médio</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Média">Média</option>
                             <option value="Baixa">Baixa</option>
                         </select>
                     </div>
@@ -110,7 +108,7 @@ const Edit = () => {
                     <button
                         type="submit"
                         title="Editar"
-                        className="btn bg-transparent"
+                        className="btn bg-transparent success"
                     >
                         Editar
                     </button>
@@ -118,7 +116,7 @@ const Edit = () => {
                         to={`/view/${id}`}
                         type="button"
                         title="Voltar"
-                        className="btn bg-transparent"
+                        className="btn bg-transparent back"
                     >
                         <IoIosReturnLeft size={40} />
                     </Link>
