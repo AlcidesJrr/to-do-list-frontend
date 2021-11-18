@@ -29,8 +29,17 @@ const View = () => {
         let data = new Date(list.prazo);
         let dataFormatada = ((data.getDate() + " " + meses[(data.getMonth())] + " " + data.getFullYear()));
 
+        var date1 = new Date(data);
+        var date2 = new Date();
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+
+
     return (
         <div>
+            <div className="title-view">
+                <h1>O prazo termina em {diffDays} dias. </h1>
+            </div>
             <div className="card-view ">
                 <h5 className="card-title">{list.titulo} 
                 <div className="edit-del">
