@@ -67,9 +67,9 @@ const Cadastro = () => {
                         <label htmlFor="status">Status: </label>
                         <select name="status" className="form-select">
                             <option value="nenhum">Nenhum</option>
-                            <option value="alto">Fazer</option>
-                            <option value="amedio">Fazendo</option>
-                            <option value="baixa">Feito</option>
+                            <option value="Fazer">Fazer</option>
+                            <option value="Fazendo">Fazendo</option>
+                            <option value="Feito">Feito</option>
                         </select>
                 </div>
                 <div className="form-group">

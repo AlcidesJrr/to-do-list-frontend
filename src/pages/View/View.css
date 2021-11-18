@@ -1,8 +1,38 @@
 .card-view {
     border: rgb(73, 73, 233) 1px solid;
     border-radius: 0.8rem;
-    width: 250px;
+    width: 450px;
     margin: auto;
     margin-top: 30px;
     padding: 1rem;
+    background-color:rgba(62, 62, 223, 0.473);
+}
+
+.card-title {
+    border-bottom: darkblue 1px solid;  
+    padding-bottom: 10px;
+}
+
+.card-text-view {
+    margin: 20px 0 20px 0;
+    border-bottom: darkblue 1px solid; 
+    padding-bottom: 30px;
+}
+
+.icons-view {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-view h6 {
+    font-size: 1.5rem;
+}
+
+.text-dark {
+    font-size: 1rem;
+}
+
+.edit-del {
+    float: right;
 }

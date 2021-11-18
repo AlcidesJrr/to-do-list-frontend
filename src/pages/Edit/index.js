@@ -3,6 +3,7 @@ import Api from '../../api/api';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { IoIosReturnLeft} from "react-icons/io";
 
 const Edit = () => {
     const [list, setList] = useState({});
@@ -56,9 +57,9 @@ const Edit = () => {
                         <label htmlFor="status">Status: </label>
                         <select name="status" value={list.status} onChange={handleFieldsChange} className="form-select" >
                             <option value="nenhum" >Nenhum</option>
-                            <option value="Alto">Fazer</option>
-                            <option value="Médio">Fazendo</option>
-                            <option value="Baixa">Feito</option>
+                            <option value="Fazer">Fazer</option>
+                            <option value="Fazendo">Fazendo</option>
+                            <option value="Feito">Feito</option>
                         </select>
                 </div>
                 <div className="form-group">
@@ -67,9 +68,9 @@ const Edit = () => {
                 </div>
              
                 <br></br>
-                <button type="submit" className="btn btn-primary">Editar</button>
-                <Link to={`/view/${id}`} type="button" className="btn btn-danger">
-                  Voltar
+                <button type="submit" title="Editar" className="btn bg-transparent">Editar</button>
+                <Link to={`/view/${id}`} type="button" title="Voltar" className="btn bg-transparent">
+                  < IoIosReturnLeft size={40} />
                 </Link>
             </form>
         </div>

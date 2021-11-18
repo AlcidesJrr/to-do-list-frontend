@@ -3,6 +3,12 @@ import { useParams } from 'react-router-dom';
 import Api from '../../api/api';
 import './View.css';
 import { Link } from 'react-router-dom';
+import { AiOutlineOrderedList } from "react-icons/ai";
+import { AiOutlineReconciliation } from "react-icons/ai";
+import { ImCalendar } from "react-icons/im";
+import { RiDeleteBinLine } from "react-icons/ri";
+import { FiEdit } from "react-icons/fi";
+import { IoIosReturnLeft} from "react-icons/io";
 
 const View = () => {
     const [list, setList] = useState({});
@@ -26,13 +32,18 @@ const View = () => {
     return (
         <div>
             <div className="card-view ">
-                <h5 className="card-title">{list.titulo}</h5>
-                <p className="card-text">{list.descricao}</p>
-                <h6>Prioridade: <span className="badge bg-primary status">{list.prioridade}</span></h6>
-                <h6>Status: <span className="badge bg-primary status">{list.status}</span></h6> 
-                <h6>Prazo: <h2 className="badge bg-transparent text-dark">{dataFormatada}</h2> </h6>
-                <Link to={`/edit/${id}`} type="button" class="btn btn-success btn-sm">Editar</Link>
-                <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+                <h5 className="card-title">{list.titulo} 
+                <div className="edit-del">
+                    <Link to={`/edit/${id}`} type="button" class="btn  bg-transparent btn-sm">< FiEdit size={20}/></Link>
+                    <button type="button" class="btn bg-transparent btn-sm">< RiDeleteBinLine size={20} /></button>
+                    <Link to={'/'} title="Voltar" type="button" class="btn bg-transparent btn-sm"> < IoIosReturnLeft size={20}/> </Link>
+                </div></h5>
+                <p className="card-text-view">{list.descricao}</p>
+                <div className="icons-view">
+                <span title="Prioridade"><AiOutlineOrderedList size={35} /> <span className="badge bg-transparent text-dark">{list.prioridade}</span></span>
+                <span title="Status"><AiOutlineReconciliation size={35} /><span className="badge bg-transparent text-dark">{list.status}</span></span> 
+                <span title="Prazo"><ImCalendar size={28} /> <h2 className="badge bg-transparent text-dark">{dataFormatada}</h2> </span>
+                </div>
             </div>
         </div>
     )
