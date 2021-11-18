@@ -14,9 +14,10 @@
 }
 
 .card-text-view {
-    margin: 20px 0 20px 0;
+    margin: 30px 0 30px 0;
     border-bottom: darkblue 1px solid; 
     padding-bottom: 30px;
+    font-weight: 600;
 }
 
 .icons-view {
@@ -38,5 +39,41 @@
 }
 
 .title-view {
-    padding: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+    width: 450px;
+    
+}
+
+.title-view h2 {
+    font-size: 2rem;
+    color: rgb(31, 29, 29);
+}
+
+.card-view {
+    margin: auto;
+}
+
+.data-criacao {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.data-criacao h5 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    float: left;
+    margin: 0;
+}
+
+.data-criacao h2 {
+    font-size: 0.8rem;
+    margin: 0;
 }

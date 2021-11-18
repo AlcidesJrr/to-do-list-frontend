@@ -26,8 +26,13 @@ const View = () => {
         }
 
          const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
-        let data = new Date(list.prazo);
-        let dataFormatada = ((data.getDate() + " " + meses[(data.getMonth())] + " " + data.getFullYear()));
+            let data = new Date(list.prazo);
+            let dataFormatada = ((data.getDate() + " " + meses[(data.getMonth())] + " " + data.getFullYear()));
+
+            const meses1 = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
+            let data1 = new Date(list.dataCriacao);
+            let dataFormatada1 = ((data1.getDate() + " " + meses1[(data1.getMonth())] + " " + data1.getFullYear()));
+
 
         var date1 = new Date(data);
         var date2 = new Date();
@@ -38,7 +43,7 @@ const View = () => {
     return (
         <div>
             <div className="title-view">
-                <h1>O prazo termina em {diffDays} dias. </h1>
+                <h2>CHECK? LIST! </h2>
             </div>
             <div className="card-view ">
                 <h5 className="card-title">{list.titulo} 
@@ -53,6 +58,11 @@ const View = () => {
                 <span title="Status"><AiOutlineReconciliation size={35} /><span className="badge bg-transparent text-dark">{list.status}</span></span> 
                 <span title="Prazo"><ImCalendar size={28} /> <h2 className="badge bg-transparent text-dark">{dataFormatada}</h2> </span>
                 </div>
+                <div className= "data-criacao">
+                <h5 title="Prazo"> Registrado:<h2 className="badge bg-transparent text-dark">{dataFormatada1}</h2></h5>
+                <h5 title="Prazo"> Restam:<h2 className="badge bg-transparent text-dark">{diffDays} dias</h2></h5>
+                </div>
+
             </div>
         </div>
     )
