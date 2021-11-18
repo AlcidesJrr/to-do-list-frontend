@@ -36,6 +36,7 @@
 
 .edit-del {
     float: right;
+    margin-top: -10px;
 }
 
 .title-view {
