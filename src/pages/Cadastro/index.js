@@ -2,6 +2,7 @@ import React from 'react';
 import './Cadastro.css';
 import Api from '../../api/api';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -31,14 +32,13 @@ const Cadastro = () => {
         const result = await request.json();
         if(result.error) {
         console.log(result.error);
-        }else {
+        }   else {
         alert(result.message);
         navigate('/');
     
   }
     }
 
-   
     return (
         <>
         <div className="titulo-h1">
@@ -74,11 +74,14 @@ const Cadastro = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="prazo">Prazo</label>
-                    <input type="Date" className="form-control" id="prazo" aria-describedby="emailHelp" placeholder="Prazo"/>
+                    <input name="prazo" type="Date" className="form-control" id="prazo" aria-describedby="emailHelp" placeholder="Prazo"/>
                 </div>
              
                 <br></br>
                 <button type="submit" className="btn btn-primary">Enviar</button>
+                <Link to={`/`} type="button" className="btn btn-danger">
+                  Voltar
+                </Link>
             </form>
         </div>
         </>

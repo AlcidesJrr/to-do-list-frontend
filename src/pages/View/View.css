@@ -1,5 +1,8 @@
-.card-body {
+.card-view {
     border: rgb(73, 73, 233) 1px solid;
     border-radius: 0.8rem;
-    width: 300px;
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 1rem;
 }

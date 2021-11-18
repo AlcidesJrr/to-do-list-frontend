@@ -4,15 +4,7 @@
     width: auto;
 }
 
-button {
-    background-color: transparent;
-    border: none;
-}
 .linkk {
     text-decoration: none;
     color: inherit;
-}
-
-.linkk:hover {
-    color: none;
 }

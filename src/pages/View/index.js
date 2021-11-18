@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import Api from '../../api/api';
-import '/View.css';
+import './View.css';
+import { Link } from 'react-router-dom';
 
 const View = () => {
     const [list, setList] = useState({});
    
     useEffect(() => {
-        getListById()
-    },[])
+        getListById();
+      }, [])
 
     const { id }= useParams();
+    console.log(id);
     const getListById = async () => {
         const request = await Api.fetchGetById(id);
         const list = await request.json();
@@ -23,13 +25,13 @@ const View = () => {
 
     return (
         <div>
-            <div className="card-body ">
+            <div className="card-view ">
                 <h5 className="card-title">{list.titulo}</h5>
                 <p className="card-text">{list.descricao}</p>
                 <h6>Prioridade: <span className="badge bg-primary status">{list.prioridade}</span></h6>
                 <h6>Status: <span className="badge bg-primary status">{list.status}</span></h6> 
                 <h6>Prazo: <h2 className="badge bg-transparent text-dark">{dataFormatada}</h2> </h6>
-                <button type="button" class="btn btn-success btn-sm">Editar</button>
+                <Link to={`/edit/${id}`} type="button" class="btn btn-success btn-sm">Editar</Link>
                 <button type="button" class="btn btn-danger btn-sm">Excluir</button>
             </div>
         </div>
