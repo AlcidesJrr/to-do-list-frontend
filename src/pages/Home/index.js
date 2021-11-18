@@ -1,12 +1,16 @@
 import React from 'react';
 import './Home.css';
 import List from '../../components/structure/List';
-import { FcAlarmClock } from "react-icons/fc";
+import { format } from 'date-fns';
+import { pt } from 'date-fns/locale';
+
+const today = new Date();
+const formattedDate = format(today, 'PPPP', {locale: pt});
 
 const Home = () => {
   return (
     <div className="container">
-      <h1 className="text-center h1">Baita relógio < FcAlarmClock /></h1>
+      <h1 className="text-center h1"> {formattedDate}</h1>
       < List />
     </div>
   )

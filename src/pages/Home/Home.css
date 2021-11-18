@@ -1,0 +1,11 @@
+.text-center {
+    margin: auto;
+    margin-top: 20px;
+    font-size: 2rem;
+    border: rgba(131, 127, 127, 0.685) 1px solid;
+    background-color: rgba(76, 69, 69, 0.082);
+    border-radius: 1rem;
+    width:600px;
+    padding: 0.5rem;
+    
+}

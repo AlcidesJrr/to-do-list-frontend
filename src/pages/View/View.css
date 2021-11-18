@@ -1,0 +1,5 @@
+.card-body {
+    border: rgb(73, 73, 233) 1px solid;
+    border-radius: 0.8rem;
+    width: 300px;
+}

@@ -1,8 +1,8 @@
-import './Styles.css'
+import './Header.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FcHome } from "react-icons/fc";
-import { FcTodoList } from "react-icons/fc";
+import { AiFillHome } from "react-icons/ai";
+import { AiFillProfile } from "react-icons/ai";
 import logoalwhite from './Img/logoalwhite.png';
 
 const Header = () => {
@@ -13,19 +13,19 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <Link className="navbar-brand text-white " to="/">
-          <img src={logoalwhite}  width="250" height="100" />
+          <img src={logoalwhite}  width="150" height="50" />
         </Link>
         <div className="nav-right">
         <div className="collapse navbar-collapse " id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link text-white active" title="Home" to="/">
-                < FcHome size={20} /> 
+                < AiFillHome size={20} color={'black'}/> 
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" title= "Cadastrar Tarefa" to="/cadastro">
-              < FcTodoList size={20} /> 
+              < AiFillProfile size={20} color={'black'} /> 
               </Link>
             </li>
           </ul>

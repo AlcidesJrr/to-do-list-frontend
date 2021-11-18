@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/shared/Header';
 import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
+import View from './pages/View';
 import { Routes, Route } from 'react-router-dom'; 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/cadastro" element={<Cadastro/>} />
+        <Route path="/edit/:id" element={<Cadastro/>} />
+        <Route path="/view/:id" element={<View />} />
       </Routes>
     </div>
   );
