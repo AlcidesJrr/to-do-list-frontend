@@ -23,9 +23,14 @@ const Edit = () => {
     const handleFieldsChange = evento => {
         const campos = { ...list };
         campos[evento.target.name] = evento.target.value;
-
         setList(campos);
     };
+
+    let data1 = new Date(list.prazo);
+    let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate() )) ;                 
+
+    let data = new Date();
+    let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() )) ;                 
 
     return (
         <>
@@ -93,15 +98,17 @@ const Edit = () => {
                     <div className="form-group">
                         <label htmlFor="prazo">Prazo</label>
                         <input
-                            type="Date"
+                            type="Date" 
+                            min={dataFormatada}
                             name="prazo"
-                            value={list.prazo}
+                            value={dataFormatada1}
                             onChange={handleFieldsChange}
                             className="form-control"
                             id="prazo"
                             aria-describedby="emailHelp"
                             placeholder="Prazo"
                         />
+                        {console.log(list.prazo)}
                     </div>
 
                     <br></br>

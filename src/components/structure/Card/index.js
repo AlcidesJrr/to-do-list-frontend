@@ -7,7 +7,7 @@ const Card = (props) => {
 
 
     return (
-        <Link to={`view/${list._id}`} className="container hg linkk" key={list._id} >
+        <Link to={`view/${list._id}`} className="container linkk" key={list._id} >
             <div className={`card-body ${list.prioridade}`}>
                 <h5 className="card-title">{list.titulo}</h5>
                 <p className="card-text">{list.descricao}</p>

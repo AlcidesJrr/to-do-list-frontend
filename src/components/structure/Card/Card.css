@@ -1,8 +1,10 @@
 .card-body {
-    border-radius: 0.8rem;
+    border-radius: 0.5rem;
     width: auto;
     background-color:rgba(62, 62, 223, 0.473);
     box-shadow: 0 0 0.2rem #00000060;
+    position: relative;
+    height: 100%;
 }
 
 .card-text {
@@ -32,6 +34,6 @@
     transform: scale(1.01);
 }
 
-.hg {
-    height: auto;
+.row {
+    margin-bottom: 50px;
 }

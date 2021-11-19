@@ -1,0 +1,36 @@
+.list-inline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.footer-basic {
+    margin-top: 0;
+}
+  
+.footer-basic .social > a {
+    width:40px;
+    height:40px;
+    display:inline-block;
+    color:inherit;
+    opacity:0.75;
+    border-color: transparent;
+    margin-top: 10px;
+}
+
+.footer-basic .social {
+    vertical-align: middle;
+}
+  
+.footer-basic .social > a:hover {
+    opacity:0.9;
+}
+  
+.footer-basic .copyright {
+    font-size:13px;
+    color:rgb(122, 118, 118); 
+    margin: 0; 
+    vertical-align: middle;
+}

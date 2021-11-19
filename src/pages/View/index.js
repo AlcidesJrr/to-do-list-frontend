@@ -63,19 +63,35 @@ const View = () => {
     ];
     let data1 = new Date(list.dataCriacao);
     let dataFormatada1 =
-        data1.getDate() +
+    data1.getDate() +
         ' ' +
-        meses1[data1.getMonth()] +
+    meses1[data1.getMonth()] +
         ' ' +
-        data1.getFullYear();
+    data1.getFullYear();
 
-    var date1 = new Date(data);
-    var date2 = new Date();
-    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  
+
+    var diffDays = '';
+    const somaData = () => {
+        var date1 = new Date(data);
+        var date2 = new Date();
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+        console.log(date1)
+        console.log(date2)
+        console.log(timeDiff)
+
+        if(diffDays === 0){
+            diffDays = "Prazo estourado!"
+            return diffDays
+        } else {
+            return (`${diffDays} dia`)
+        }
+    }
+    somaData();
+    var somaDataResult = somaData()
+
     var colorText ='';
-
     const ColorText = () => {
         if(diffDays > 15) {
             colorText = 'text-dark'
@@ -153,7 +169,7 @@ const View = () => {
                         {' '}
                         Restam:
                         <h2 className={`badge bg-transparent ${colorText}`}>
-                            {diffDays} dias
+                            {somaDataResult}
                         </h2>
                     </h5>
                 </div>

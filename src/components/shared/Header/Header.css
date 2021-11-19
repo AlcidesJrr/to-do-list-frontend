@@ -8,3 +8,39 @@
     font-size: 1rem;
     vertical-align: middle; 
 }
+
+.text-data {
+    font-size: 1.3rem;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-right {
+    padding-left: 90px
+}
+
+@media (min-width: 461px) and (max-width: 960px) {
+    .text-data { 
+      width: 30%;
+      font-size: 2.5vw;
+      margin-left: 73px;
+    }
+}
+
+@media (min-width: 461px) and (max-width: 960px) {
+    .navbar-brand { 
+      width: 5%;
+    }
+}
+  
+@media (min-width: 461px) and (max-width: 960px) {
+    .nav-right  { 
+      margin-right: 15px;
+    }
+}
+
+@media (min-width: 461px) and (max-width: 960px) {
+    .teste  { 
+      margin-right: 15px;
+    }
+}

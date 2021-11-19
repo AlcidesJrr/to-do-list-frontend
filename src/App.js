@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
 import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import View from './pages/View';
@@ -18,6 +19,7 @@ function App() {
         <Route path="/view/:id" element={<View />} />
         <Route path="/modal" element={<Modal />} />
       </Routes>
+      < Footer />
     </div>
   );
 }
