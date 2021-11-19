@@ -24,7 +24,6 @@ const View = () => {
         setList(list);
     };
 
-
     const meses = [
         'Jan',
         'Fev',
@@ -74,7 +73,7 @@ const View = () => {
     const somaData = () => {
         var date1 = new Date(data);
         var date2 = new Date();
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var timeDiff = date2.getTime() - date1.getTime();
         diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
         console.log(date1)
