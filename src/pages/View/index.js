@@ -24,7 +24,7 @@ const View = () => {
         setList(list);
     };
 
-   
+
     const meses = [
         'Jan',
         'Fev',
@@ -102,10 +102,7 @@ const View = () => {
     ColorText();
 
     return (
-        <div>
-            <div className="title-view">
-                <h2>CHECK? LIST! </h2>
-            </div>
+        <div className="card-all">
             <div className={`card-view ${list.prioridade}`}>
                 <h5 className="card-title">
                     {list.titulo}
