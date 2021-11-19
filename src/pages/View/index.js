@@ -73,18 +73,18 @@ const View = () => {
     const somaData = () => {
         var date1 = new Date(data);
         var date2 = new Date();
-        var timeDiff = date2.getTime() - date1.getTime();
+        var timeDiff = date1.getTime() - date2.getTime();
         diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
         console.log(date1)
         console.log(date2)
         console.log(timeDiff)
 
-        if(diffDays === 0){
+        if(diffDays <= 0){
             diffDays = "Prazo estourado!"
             return diffDays
         } else {
-            return (`${diffDays} dia`)
+            return (`${diffDays} dias`)
         }
     }
     somaData();
