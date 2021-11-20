@@ -22,6 +22,11 @@ const Api = {
       })
     },
 
+    fetchDelete: (id) => {
+        return fetch(`${Api.apiUrl}/${id}`, {
+        method: 'DELETE'
+      })
+    }
   
   }
   

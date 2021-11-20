@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Api from '../../api/api';
 import './View.css';
 import { Link } from 'react-router-dom';
@@ -8,9 +9,13 @@ import { AiOutlineReconciliation } from 'react-icons/ai';
 import { ImCalendar } from 'react-icons/im';
 import { FiEdit } from 'react-icons/fi';
 import { IoIosReturnLeft } from 'react-icons/io';
-import ModalDelete from '../../components/structure/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Modal } from 'react-bootstrap';
+import { RiDeleteBinLine } from 'react-icons/ri';
+
 
 const View = () => {
+    let navigate = useNavigate();
     const [list, setList] = useState({});
 
     useEffect(() => {
@@ -23,6 +28,44 @@ const View = () => {
         const list = await request.json();
         setList(list);
     };
+
+    const handleDelete = async () => {
+        const response = await Api.fetchDelete(id);
+        const data = await response.json();
+        if(data.message) {
+            console.log('excluido', data.message);
+            navigate('/');
+          }else {
+            alert(data.error);
+          }
+    }
+
+    const ModalDelete = () => {
+        const [show, setShow] = useState(false);
+      
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+      
+        return (
+          <>
+            <button variant="primary" className="btn  editar      bg-transparent btn-sm" onClick={handleShow}>
+              <RiDeleteBinLine size={20} />
+            </button> 
+    
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Body>Tem certeza que deseja excluir?</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose} size={25}>
+                 Cancelar
+                </Button>
+                <Button variant="primary" onClick={handleDelete} size={25}>
+                  Excluir
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        );
+      }
 
     const meses = [
         'Jan',
@@ -115,7 +158,7 @@ const View = () => {
                             className="btn delete bg-transparent btn-sm"
                             title = "Deletar"
                             >
-                            < ModalDelete />
+                            {< ModalDelete />}
                         </button>
                         <Link
                             to={'/'}
