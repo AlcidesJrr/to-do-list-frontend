@@ -24,6 +24,9 @@ const Edit = () => {
     const getListById = async () => {
         const request = await Api.fetchGetById(id);
         const list = await request.json();
+        let data1 = new Date(list.prazo);
+        let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate())) ;  
+        list.prazo = dataFormatada1;
         setList(list);
     };
 
@@ -40,9 +43,6 @@ const Edit = () => {
         alert(response.message)
         navigate(`/view/${id}`);
     }
-
-    let data1 = new Date(list.prazo);
-    let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate())) ;                 
 
     let data = new Date();
     let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() )) ;                 
@@ -113,10 +113,10 @@ const Edit = () => {
                     <div className="form-group">
                         <label htmlFor="prazo">Prazo</label>
                         <input
+                            type="Date" 
                             min={dataFormatada}
                             name="prazo"
-                            type="Date" 
-                            value={dataFormatada1}
+                            value={list.prazo}
                             onChange={handleFieldsChange}
                             className="form-control"
                             id="prazo"
