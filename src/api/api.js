@@ -10,7 +10,19 @@ const Api = {
           "Content-Type": "application/json"
         })
       })
-    }
+    },
+
+    fetchPut: (list, id)  => {
+      return fetch(`${Api.apiUrl}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(list),
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+      })
+    },
+
+  
   }
   
   export default Api;

@@ -76,10 +76,6 @@ const View = () => {
         var timeDiff = date1.getTime() - date2.getTime();
         diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-        console.log(date1)
-        console.log(date2)
-        console.log(timeDiff)
-
         if(diffDays <= 0){
             diffDays = "Prazo estourado!"
             return diffDays

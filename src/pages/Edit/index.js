@@ -7,7 +7,14 @@ import { IoIosReturnLeft } from 'react-icons/io';
 import './../Cadastro/Cadastro.css'
 
 const Edit = () => {
-    const [list, setList] = useState({});
+    let navigate = useNavigate();
+    const [list, setList] = useState({
+        titulo: '',
+        descricao: '',
+        prioridade: '',
+        status: '',
+        prazo: '',
+    });
 
     useEffect(() => {
         getListById();
@@ -26,8 +33,16 @@ const Edit = () => {
         setList(campos);
     };
 
+    const handleSubmit = async (evento) => {
+        evento.preventDefault();
+        const request = await Api.fetchPut(list, id);
+        const response = await request.json();
+        alert(response.message)
+        navigate(`/view/${id}`);
+    }
+
     let data1 = new Date(list.prazo);
-    let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate() )) ;                 
+    let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate())) ;                 
 
     let data = new Date();
     let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() )) ;                 
@@ -38,7 +53,7 @@ const Edit = () => {
                 <h1>Editar Tarefa</h1>
             </div>
             <div className="cadastro">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="titulo">Título</label>
                         <input
@@ -98,9 +113,9 @@ const Edit = () => {
                     <div className="form-group">
                         <label htmlFor="prazo">Prazo</label>
                         <input
-                            type="Date" 
                             min={dataFormatada}
                             name="prazo"
+                            type="Date" 
                             value={dataFormatada1}
                             onChange={handleFieldsChange}
                             className="form-control"
@@ -108,7 +123,6 @@ const Edit = () => {
                             aria-describedby="emailHelp"
                             placeholder="Prazo"
                         />
-                        {console.log(list.prazo)}
                     </div>
 
                     <br></br>
