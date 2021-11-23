@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { IoIosReturnLeft } from 'react-icons/io';
 import './../Cadastro/Cadastro.css'
+import DateF from './../../func/date/date.js'
 
 const Edit = () => {
     let navigate = useNavigate();
@@ -24,9 +25,7 @@ const Edit = () => {
     const getListById = async () => {
         const request = await Api.fetchGetById(id);
         const list = await request.json();
-        let data1 = new Date(list.prazo);
-        let dataFormatada1 = (data1.getFullYear() + "-" + ((data1.getMonth() + 1)) + "-" + (data1.getDate())) ;  
-        list.prazo = dataFormatada1;
+        list.prazo = DateF.funcDate(list.prazo)
         setList(list);
     };
 
@@ -43,10 +42,7 @@ const Edit = () => {
         alert(response.message)
         navigate(`/view/${id}`);
     }
-
-    let data = new Date();
-    let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() )) ;                 
-
+         
     return (
         <>
             <div className="titulo-h1">
@@ -114,7 +110,7 @@ const Edit = () => {
                         <label htmlFor="prazo">Prazo</label>
                         <input
                             type="Date" 
-                            min={dataFormatada}
+                            min={DateF.funcDate(new Date())}
                             name="prazo"
                             value={list.prazo}
                             onChange={handleFieldsChange}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Card from '../Card';
+import Api from '../../../api/api'
 
 const List = () => {
   const [lists, setLists] = useState([]);
@@ -9,7 +10,7 @@ const List = () => {
   }, [])
 
   const getLists = async () => {
-    const request = await fetch('http://localhost:3001/')
+    const request = await Api.fetchGetAll('https://backend-to-do-list-blue.herokuapp.com/')
     const data = await request.json();
     setLists(data);
   }

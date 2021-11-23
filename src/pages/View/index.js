@@ -3,15 +3,16 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Api from '../../api/api';
 import './View.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { AiOutlineOrderedList } from 'react-icons/ai';
 import { AiOutlineReconciliation } from 'react-icons/ai';
 import { ImCalendar } from 'react-icons/im';
 import { FiEdit } from 'react-icons/fi';
 import { IoIosReturnLeft } from 'react-icons/io';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import DateF from '../../func/date/date.js'
 
 
 const View = () => {
@@ -48,7 +49,7 @@ const View = () => {
       
         return (
           <>
-            <button variant="primary" className="btn  editar      bg-transparent btn-sm" onClick={handleShow}>
+            <button variant="primary" className="btn editar bg-transparent btn-sm" onClick={handleShow}>
               <RiDeleteBinLine size={20} />
             </button> 
     
@@ -67,54 +68,9 @@ const View = () => {
         );
       }
 
-    const meses = [
-        'Jan',
-        'Fev',
-        'Mar',
-        'Abr',
-        'Mai',
-        'Jun',
-        'Jul',
-        'Ago',
-        'Set',
-        'Out',
-        'Nov',
-        'Dez',
-    ];
-    let data = new Date(list.prazo);
-    let dataFormatada =
-        data.getDate() +
-        ' ' +
-        meses[data.getMonth()] +
-        ' ' +
-        data.getFullYear();
-
-    const meses1 = [
-        'Jan',
-        'Fev',
-        'Mar',
-        'Abr',
-        'Mai',
-        'Jun',
-        'Jul',
-        'Ago',
-        'Set',
-        'Out',
-        'Nov',
-        'Dez',
-    ];
-    let data1 = new Date(list.dataCriacao);
-    let dataFormatada1 =
-    data1.getDate() +
-        ' ' +
-    meses1[data1.getMonth()] +
-        ' ' +
-    data1.getFullYear();
-
-
     var diffDays = '';
     const somaData = () => {
-        var date1 = new Date(data);
+        var date1 = new Date(list.prazo);
         var date2 = new Date();
         var timeDiff = date1.getTime() - date2.getTime();
         diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -128,6 +84,8 @@ const View = () => {
     }
     somaData();
     var somaDataResult = somaData()
+
+    console.log(list.prazo)
 
     var colorText ='';
     const ColorText = () => {
@@ -188,7 +146,7 @@ const View = () => {
                     <span title="Prazo">
                         <ImCalendar size={28} />{' '}
                         <h2 className="badge bg-transparent text-dark">
-                            {dataFormatada}
+                            {DateF.funDateExt(list.prazo)}
                         </h2>{' '}
                     </span>
                 </div>
@@ -197,7 +155,7 @@ const View = () => {
                         {' '}
                         Registrado:
                         <h2 className="badge bg-transparent text-dark">
-                            {dataFormatada1}
+                            {DateF.funDateExt(list.dataCriacao)}
                         </h2>
                     </h5>
                     <h5 title="Prazo">

@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { AiFillProfile } from 'react-icons/ai';
 import logoalwhite from './Img/logoalwhite.png';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-
-const today = new Date();
-const formattedDate = format(today, 'PPPP', { locale: ptBR });
-const dataFomatada = formattedDate.toUpperCase();
+import DateF from '../../../func/date/date.js'
 
 const Header = () => {
     return (
@@ -19,7 +14,7 @@ const Header = () => {
                     <img src={logoalwhite} width="150" height="50" />
                 </Link>
 
-                <h1 className="text-data"> {dataFomatada}</h1>
+                <h1 className="text-data"> {DateF.funDateEst()}</h1>
 
                 <div className="nav-right">
                     <div
