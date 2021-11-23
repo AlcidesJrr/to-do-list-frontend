@@ -46,7 +46,7 @@ const Edit = () => {
     return (
         <>
             <div className="titulo-h1">
-                <h1>Editar Tarefa</h1>
+                <h4>Editar Tarefa</h4>
             </div>
             <div className="cadastro">
                 <form onSubmit={handleSubmit}>

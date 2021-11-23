@@ -11,7 +11,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg navbar-light w-100">
             <div className="container">
                 <Link className="navbar-brand text-white " to="/">
-                    <img src={logoalwhite} width="150" height="50" />
+                    <img src={logoalwhite} width="160" height="60" />
                 </Link>
 
                 <h1 className="text-data"> {DateF.funDateEst()}</h1>
@@ -28,7 +28,7 @@ const Header = () => {
                                     title="Home"
                                     to="/"
                                 >
-                                    <AiFillHome size={20} color={'black'} />
+                                    <AiFillHome size={25} color={'black'} />
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -37,7 +37,7 @@ const Header = () => {
                                     title="Cadastrar Tarefa"
                                     to="/cadastro"
                                 >
-                                    <AiFillProfile size={20} color={'black'} />
+                                    <AiFillProfile size={25} color={'black'} />
                                 </Link>
                             </li>
                         </ul>
