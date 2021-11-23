@@ -120,7 +120,6 @@ const Edit = () => {
                             placeholder="Prazo"
                         />
                     </div>
-
                     <br></br>
                     <button
                         type="submit"

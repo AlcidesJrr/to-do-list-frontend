@@ -2,9 +2,10 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 const DateF =  {
-    funcDate: (dt) => {
-        let data = new Date(dt);
-        let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() ));  
+     funcDate: (dt) => {
+        const today = new Date(dt);
+        const formattedDate = format(today, 'yyyy-MM-dd', { locale: ptBR });
+        const dataFormatada = formattedDate;
         return dataFormatada
     },
 
@@ -21,9 +22,9 @@ const DateF =  {
         ];
         let data = new Date(dt);
         let dataFormatada = data.getDate() + ' ' + meses[data.getMonth()] +' ' +data.getFullYear();
-        console.log(dt)
         return dataFormatada
     }
+
 }
 
 export default DateF

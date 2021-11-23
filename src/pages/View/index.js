@@ -85,8 +85,6 @@ const View = () => {
     somaData();
     var somaDataResult = somaData()
 
-    console.log(list.prazo)
-
     var colorText ='';
     const ColorText = () => {
         if(diffDays > 15) {

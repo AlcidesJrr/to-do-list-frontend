@@ -95,7 +95,7 @@ const Cadastro = () => {
                         <input
                             min={dataFormatada}
                             name="prazo"
-                            type="Date"
+                            type="date"
                             className="form-control"
                             id="prazo"
                             aria-describedby="emailHelp"
