@@ -14,7 +14,6 @@ import { Button, Modal } from 'react-bootstrap';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import DateF from '../../func/date/date.js'
 
-
 const View = () => {
     let navigate = useNavigate();
     const [list, setList] = useState({});
@@ -27,8 +26,13 @@ const View = () => {
     const getListById = async () => {
         const request = await Api.fetchGetById(id);
         const list = await request.json();
+        list.prazo1 = DateF.funcDate(list.prazo);
+        list.prazo = DateF.funcDateView(list.prazo);
+        list.dataCriacao = DateF.funcDateView(list.dataCriacao);
         setList(list);
     };
+
+    console.log(list.prazo1)
 
     const handleDelete = async () => {
         const response = await Api.fetchDelete(id);
@@ -70,7 +74,7 @@ const View = () => {
 
     var diffDays = '';
     const somaData = () => {
-        var date1 = new Date(list.prazo);
+        var date1 = new Date(list.prazo1);
         var date2 = new Date();
         var timeDiff = date1.getTime() - date2.getTime();
         diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -144,7 +148,7 @@ const View = () => {
                     <span title="Prazo">
                         <ImCalendar size={28} />{' '}
                         <h2 className="badge bg-transparent text-dark">
-                            {DateF.funDateExt(list.prazo)}
+                            {list.prazo}
                         </h2>{' '}
                     </span>
                 </div>
@@ -153,7 +157,7 @@ const View = () => {
                         {' '}
                         Registrado:
                         <h2 className="badge bg-transparent text-dark">
-                            {DateF.funDateExt(list.dataCriacao)}
+                            {list.dataCriacao}
                         </h2>
                     </h5>
                     <h5 title="Prazo">

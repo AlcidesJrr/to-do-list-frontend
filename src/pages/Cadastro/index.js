@@ -44,7 +44,7 @@ const Cadastro = () => {
     return (
         <>
             <div className="titulo-h1">
-                <h1>Cadastrar Tarefa</h1>
+                <h4>Cadastrar Tarefa</h4>
             </div>
             <div className="cadastro">
                 <form onSubmit={handleSubmit}>
