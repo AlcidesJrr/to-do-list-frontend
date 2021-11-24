@@ -32,8 +32,6 @@ const View = () => {
         setList(list);
     };
 
-    console.log(list.prazo1)
-
     const handleDelete = async () => {
         const response = await Api.fetchDelete(id);
         const data = await response.json();
